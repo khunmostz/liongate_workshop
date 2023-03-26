@@ -3,8 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:liongate_workshop/constant.dart';
 import 'package:liongate_workshop/controllers/detail.controller.dart';
-import 'package:liongate_workshop/models/room.model.dart';
-import 'package:liongate_workshop/models/round.model.dart';
 
 class DetailScreen extends StatelessWidget {
   var image = Get.arguments[0];
@@ -15,45 +13,10 @@ class DetailScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var result = 0;
-    var price = 0;
-    for (var roundName in round.keys) {
-      var roundData = round[roundName];
-      if (roundData!['Animal'] == name) {
-        final numSeats = room[roundData['Room']]!['seats']!;
-        final numPrice = room[roundData['Room']]!['baht']!;
-        result = numSeats;
-        price = numPrice;
-      }
-    }
-
     DetailController _detailController = Get.put(DetailController());
 
     return GetBuilder<DetailController>(builder: (_) {
       return Scaffold(
-        // backgroundColor: Colors.grey.shade300,
-        // floatingActionButton: _detailController.totalPrice != 0
-        //     ? FloatingActionButton.extended(
-        //         onPressed: () {
-        //           // final box = GetStorage();
-        //           // box.write('', {
-        //           //   'round':3,//
-        //           //   'seat_data': [
-        //           //     {
-        //           //       'seat_number': 0, //
-        //           //       'isReserve': false,
-        //           //       'user_id': ''
-        //           //      },
-        //           //   ], // seat
-        //           // });
-        //           Get.offNamed('/qrcode', arguments: [
-        //             _detailController.totalPrice,
-        //           ]);
-        //         },
-        //         icon: Icon(Icons.money),
-        //         label: Text("ชำระค่าใช้จ่าย"),
-        //       )
-        //     : null,
         body: Container(
           width: w,
           height: h,
