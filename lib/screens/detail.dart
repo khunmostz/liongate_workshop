@@ -1,13 +1,10 @@
-import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:get_storage/get_storage.dart';
 import 'package:liongate_workshop/constant.dart';
 import 'package:liongate_workshop/controllers/detail.controller.dart';
 import 'package:liongate_workshop/models/room.model.dart';
 import 'package:liongate_workshop/models/round.model.dart';
-import 'package:liongate_workshop/screens/widgets/sceen_painter.dart';
 
 class DetailScreen extends StatelessWidget {
   var image = Get.arguments[0];
