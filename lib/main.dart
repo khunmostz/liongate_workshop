@@ -7,7 +7,9 @@ import 'package:liongate_workshop/routes.dart';
 import 'package:liongate_workshop/screens/auth.dart';
 
 void main() async {
+  await ScreenUtil.ensureScreenSize();
   await GetStorage.init();
+
   runApp(const MyApp());
 }
 
